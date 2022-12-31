@@ -1,0 +1,40 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+*{
+  box-sizing: border-box;
+  --grey:#333333;
+  --accent:#E55143;
+  --accent-grey:#F1F1F1;
+  
+}
+
+#page-wrap {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid{
+display: grid;
+grid-template-row: repeat(4,1fr);
+}
+
+.productImage{
+border: 1px solid grey;
+  border-right: 1px solid grey ;
+  height: 230px;
+}
