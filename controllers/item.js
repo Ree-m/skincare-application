@@ -35,31 +35,25 @@ module.exports = {
     }
   },
 
-  // create item for admin
+  // create new item for admin
   createItem: async (req, res) => {
-
-    const item=new Item({
-      name: req.body.name,
-      // image: result.secure_url,
-      // cloudinaryId: result.public_id,
-      description: req.body.description,
-      category: req.body.category,
-      brand:req.body.brand,
-      price: req.body.price
-
-
-    })
-
     try {
-      const itemsToSave = await item.save()
-      res.status(200).json(itemsToSave)
+      
+      await Item.create({ 
+        name: req.body.name,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
+        description: req.body.description,
+        category: req.body.category,
+        brand:req.body.brand,
+        price:req.body.price,
+        
+      });
+      console.log("Item has been added!");
+      res.redirect("/items");
+    } catch (err) {
+          res.status(400).json({ message: error.message });
 
-      
-      
-      // console.log("Item has been added!");
-      // res.redirect("/items");
-    } catch (error) {
-      res.status(400).json({ message: error.message });
     }
   },
   deleteItem: async (req, res) => {

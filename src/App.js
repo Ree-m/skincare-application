@@ -30,7 +30,7 @@ function App() {
       mode: 'cors'
     })
       .then(res => {
-        return res.text()
+        return res.json()
       })
       .then(data => {
 
@@ -45,25 +45,25 @@ function App() {
 
   }
 
-  async function getData() {
-    await fetch('http://localhost:9000/main/login', {
-      mode: 'cors'
-    })
-      .then(res => {
-        return res.text()
-      })
-      .then(data => {
+  // async function getData() {
+  //   await fetch('http://localhost:9000/main/login', {
+  //     mode: 'cors'
+  //   })
+  //     .then(res => {
+  //       return res.text()
+  //     })
+  //     .then(data => {
 
-        console.log(data)
+  //       console.log(data)
         
-      })
-      .catch(err => {
+  //     })
+  //     .catch(err => {
 
-        console.log(err)
-      })
+  //       console.log(err)
+  //     })
 
 
-  }
+  // }
 
 
 

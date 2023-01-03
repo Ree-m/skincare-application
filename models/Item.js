@@ -9,6 +9,14 @@ const itemSchema = new mongoose.Schema({
       required: true,
       trim: true
    },
+   image: {
+     type: String,
+     require: true,
+   },
+   cloudinaryId: {
+     type: String,
+     require: true,
+   },
    description: {
       type: String,
       required: true
@@ -23,7 +31,7 @@ const itemSchema = new mongoose.Schema({
    },
    price: {
       type: Number,
-      
+       
    }
 }, {
    timestamps: true

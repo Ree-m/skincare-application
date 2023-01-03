@@ -16,6 +16,4 @@ router.post("/", itemsController.createItem);  //this for admin
 router.delete("/:id", itemsController.deleteItem);  // for admin
 
 
-
-
 module.exports = router;

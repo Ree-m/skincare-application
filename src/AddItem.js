@@ -6,11 +6,14 @@ const AddItem = () => {
     const [category, setCategory] = useState('')
     const [brand, setBrand] = useState('')
     const [price, setPrice] = useState('')
-    // const [selectedFile, setSelectedFile] = useState('');
+    const [image, setImage] = useState('');
+    const [ cloudinaryId, setCloudinaryId ] = useState("");
+
 
 
     const onSubmit = () => {
-        fetch('http://localhost:9000/items/', {
+
+        fetch('http://localhost:9000/items', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -22,12 +25,14 @@ const AddItem = () => {
                 category:category,
                 brand:brand,
                 price:price,
+                image:image,
+                cloudinaryId:cloudinaryId,
                 
             })
         })
         .then(()=>{
             // Once posted, the user will be notified 
-            alert('You have been added to the system!');
+            alert('Item has been added to the system!');
         })
 
 
@@ -84,10 +89,10 @@ const AddItem = () => {
                     onChange={(e) => setPrice(e.target.value)} />
             </div>
 
-              {/* <input
+               <input
                 type="file"
                 value={selectedFile}
-                onChange={(e) => setSelectedFile(e.target.files[0])}  /> */}
+                onChange={(e) => setImage(e.target.files[0])}  /> 
             
 
             <button type="submit"> Submit</button>
